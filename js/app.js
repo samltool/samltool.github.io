@@ -36,14 +36,6 @@
     extraKeys: { 'Tab': tabHack},
   });
 
-
-  function xmlEditorOnChangeListener(instance) {
-    alert(1);
-  }
-
-  xmlEditor.on('change', xmlEditorOnChangeListener);
-
-
   function saveToStorage(jwt) {
     // Save last valid jwt value for refresh
     localStorage.jwtValue = jwt;
