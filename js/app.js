@@ -73,15 +73,15 @@
   $('.jwt-playground .expand').click(function(e) {
     $(this).hide();
     $('.jwt-playground .collapse').show();
-    $('.jwt-playground textarea').hide();
-    $('.jwt-playground .xml-input').parent().removeClass('col-md-6').addClass('col-md-12');
+    $('.jwt-playground .token').hide();
+    $('.jwt-playground .xml.col-md-6').removeClass('col-md-6').addClass('col-md-12');
   });
 
   $('.jwt-playground .collapse').click(function(e) {
     $(this).hide();
     $('.jwt-playground .expand').show();
-    $('.jwt-playground textarea').show();
-    $('.jwt-playground .xml-input').parent().removeClass('col-md-12').addClass('col-md-6');
+    $('.jwt-playground .token').show();
+    $('.jwt-playground .xml.col-md-12').removeClass('col-md-12').addClass('col-md-6');
   });
 
 }());
