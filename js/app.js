@@ -54,10 +54,10 @@
     return value.replace(/\s/g, '');
   }
 
-
   tokenEditor.on('change keypress paste focus textInput input', function() {
+    if (!tokenEditor.val().length) return;
     var decoded = window.decode(tokenEditor.val()).result;
-    // $('.xml-input').val(decoded);
+    xmlEditor.setValue(decoded);
   });
 
   loadFromStorage(function (jwt) {

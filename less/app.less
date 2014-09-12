@@ -6,7 +6,7 @@
 
 @backgroundColor:             #fff;
 
-@validColor: green;
+@validColor: #7ED321;
 @invalidColor: red;
 
 @wholePageZoom: 1.0;
@@ -14,8 +14,11 @@
 /* Hack: CodeMirror zoom bug that prevents clicking from working right with zoom != 1 */
 @codeMirrorZoom: 1/@wholePageZoom;
 
+.container{
+  // min-width: 980px;
+}
+
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
-  background-color: none;
   color: black;
 }
 .navbar-default .navbar-brand{
@@ -42,11 +45,13 @@
   //   height: 1px;
   //   width: 100%;
   // }
+
   p {
     color: white;
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 100;
     line-height: 52px;
+    position: relative;
   }
   a{
     font-size: 16px;
@@ -54,6 +59,7 @@
     color: white;
     opacity: .8;
     display: inline-block;
+    position: relative;
   }
 
   canvas{
@@ -84,11 +90,6 @@ pre, code { padding: 0; margin: 0; font-family:  Menlo !important; }
        -moz-box-sizing: @prop; /* Firefox, other Gecko */
             box-sizing: @prop; /* Opera/IE 8+ */
 }
-
-body>.container{
-  padding-top: 0 !important;
-}
-
 
 
 
@@ -177,6 +178,8 @@ body>.container{
   }
 }
 
+
+
 .banner{
   background: linear-gradient(120deg, #14204d 0%, #3cc8f4 100%);
   // padding: 20px;
@@ -211,6 +214,7 @@ body>.container{
 
   textarea {
     width: 100%;
+    padding: 10px;
   }
 
   .input {
@@ -230,88 +234,24 @@ body>.container{
       .box-shadow(0px 0px 4px #54A1E9);
     }
 
+    pre span  {
+      color: @jwtDotColor;
+      font-family: proxima-nova, 'Helvetica Neue', sans-serif;
+      font-size: 15px;
+    }
+
+    * {
+      line-height: 16px;
+    }
+
+    .cm-tag    { color: @jwtHeaderColor;     }
+    .cm-attribute   { color: @jwtPayloadColor;    }
+    .cm-string { color: @jwtSignatureColor;  }
+
     .CodeMirror {
       width: 100%;
-      background: none;
-      font-size: 20px;
-      line-height: 30px;
-
-      pre span  {
-        color: @jwtDotColor;
-        font-family: proxima-nova, 'Helvetica Neue', sans-serif;
-        font-size: 15px;
-      }
-
-      * {
-        line-height: 16px;
-      }
-
-      .cm-tag    { color: @jwtHeaderColor;     }
-      .cm-attribute   { color: @jwtPayloadColor;    }
-      .cm-string { color: @jwtSignatureColor;  }
-      min-height: 434px;
       height: auto;
-
-    }
-  }
-
-  .output {
-    .box-sizing(border-box);
-
-    .jwt-explained {
-      background: @jwtExplainedBackgroundColor;
-      padding: inherit;
-      border: 1px solid #ECECEC;
-      padding: 10px;
-      margin-bottom: 2px;
-      pre{
-        font-size: 16px;
-        line-height: 26px;
-      }
-
-      &.error {
-        background: rgba(100,0,0,0.1);
-      }
-
-      &:hover {
-        .box-shadow(0px 0px 4px #54A1E9);
-      }
-      .CodeMirror {
-        width: 100%;
-        height: auto;
-        background: none;
-      }
-    }
-
-    .syntaxHighlightingOverride(@color) {
-      .CodeMirror,
-      .CodeMirror .cm-property,
-      .CodeMirror .cm-string,
-      .CodeMirror .cm-atom,
-      .CodeMirror .cm-number{
-        color: @color;
-      }
-    }
-
-    .jwt-header {
-      color: @jwtHeaderColor;
-      .syntaxHighlightingOverride(@jwtHeaderColor);
-    }
-
-    .jwt-payload {
-      color: @jwtPayloadColor;
-      .syntaxHighlightingOverride(@jwtPayloadColor);
-    }
-
-    .jwt-signature  {
-      color: @jwtSignatureColor;
-      font-family: monospace;
-
-      pre { background-color: transparent; border: 0; color: @jwtSignatureColor; }
-
-      span.is-base64-encoded-label {
-        font-size: x-small;
-      }
+      background: none;
     }
   }
 
@@ -322,6 +262,7 @@ body>.container{
     clear: both;
     text-align: center;
     width: 100%;
+    font-size: 20px;
     color: white;
     text-transform: uppercase;
     .box-sizing(border-box);
@@ -364,9 +305,6 @@ body {
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
 
-body > .container {
-  padding: 60px 15px 0;
-}
 .container .text-muted {
   margin: 20px 0;
 }
@@ -380,6 +318,6 @@ code {
   font-size: 80%;
 }
 
-.navbar {
-  height: 50px;
+.navbar-right {
+  height: 20px;
 }
