@@ -69,7 +69,7 @@
   });
 
   xmlEditor.on('change', function(cm) {
-    alert(1);
+    tokenEditor.val(window.encode(xmlEditor.getValue()));
   });
 
   loadFromStorage(function (jwt) {
