@@ -108,16 +108,16 @@
 
 
             <script id="saml-info-template" type="text/x-handlebars-template">
-                  <div>Version: {{_Version}}</div>
-                  <div>Issuer: {{Issuer.__text}}</div>
+                  <div>Version: {{version}}</div>
+                  <div>Issuer: {{issuer}}</div>
                   <div>Thumbprint: {{thumbprint}}</div>
                   <div>Attributes:
+                      <div>name: {{version}}</div>
                       <div>name: {{__Version}}</div>
-                      <div>name: {{__Version}}</div>
-                      <div>name: {{__Version}}</div>
+                      <div>name: {{version}}</div>
                   </div>
                   <div>Expiration: {{expires}}</div>
-                  <div>Audiences: {{Assertion.Conditions.AudienceRestriction.Audience.__text}}</div>
+                  <div>Audiences: {{audiences}}</div>
             </script>
           </div>
         </div>
