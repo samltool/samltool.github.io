@@ -14,10 +14,6 @@
 /* Hack: CodeMirror zoom bug that prevents clicking from working right with zoom != 1 */
 @codeMirrorZoom: 1/@wholePageZoom;
 
-.container{
-  // min-width: 980px;
-}
-
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
   color: black;
 }
@@ -96,7 +92,6 @@ pre, code { padding: 0; margin: 0; font-family:  Menlo !important; }
 }
 
 
-
 .navbar-default.navbar-fixed-top{
   background: rgba(255,255,255,.9);
   border: 0;
@@ -107,6 +102,10 @@ pre, code { padding: 0; margin: 0; font-family:  Menlo !important; }
   -webkit-box-shadow: @prop;
      -moz-box-shadow: @prop;
           box-shadow: @prop;
+}
+
+.row.info {
+  margin-bottom: 50px;
 }
 
 .panel{
@@ -182,8 +181,6 @@ pre, code { padding: 0; margin: 0; font-family:  Menlo !important; }
   }
 }
 
-
-
 .banner{
   background: linear-gradient(120deg, #14204d 0%, #3cc8f4 100%);
   // padding: 20px;
@@ -214,6 +211,12 @@ pre, code { padding: 0; margin: 0; font-family:  Menlo !important; }
   h4{
     font-size: 14px;
     text-transform: uppercase;
+
+    label {
+      text-transform: none;
+      font-weight: normal;
+      margin-right: 10px;
+    }
   }  
 
   textarea {
