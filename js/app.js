@@ -77,16 +77,14 @@
     if (!samlObj) { return; }
 
     if (!samlObj.Response) { return; }
-      console.log(samlObj);
+
     if (!samlObj.Response.Assertion) { return; }
 
     samlObj = samlObj.Response;
 
     var samlData = {};
 
-    if (samlObj._Version) {
-      samlData.version = samlObj._Version;
-    }
+    samlData.otherData = samlObj;
 
     if (samlObj.Issuer) {
       var issuer = samlObj.Issuer.__text;
@@ -94,6 +92,10 @@
       if (issuer) {
           samlData.issuer = samlObj.issuer;
       }
+    }
+
+    if (samlObj._Version) {
+      samlData.version = samlObj._Version;
     }
 
     if (samlObj.Assertion.Conditions) {
@@ -130,24 +132,24 @@
     }
 
     if (samlObj.Assertion.AttributeStatement) {
-        if (samlObj.Assertion.AttributeStatement.Attribute) {
-          var attributes = samlObj.Assertion.AttributeStatement.Attribute;
-          var attr = {};
-          for (var i = attributes.length - 1; i >= 0; i--) {
-            var values = attributes[i].AttributeValue;
-            if (!isArray(values)) {
-              attr[attributes[i]._Name] = [values.__text];
-            } else {
-              attr[attributes[i]._Name] = [];
+      if (samlObj.Assertion.AttributeStatement.Attribute) {
+        var attributes = samlObj.Assertion.AttributeStatement.Attribute;
+        var attr = {};
+        for (var i = attributes.length - 1; i >= 0; i--) {
+          var values = attributes[i].AttributeValue;
+          if (!isArray(values)) {
+            attr[attributes[i]._Name] = [values.__text];
+          } else {
+            attr[attributes[i]._Name] = [];
 
-              for (var j = values.length - 1; j >= 0; j--) {
-                attr[attributes[i]._Name].push(values[j].__text);
-              };
-            }
-          };
-          samlData.attributes = attr;
-          console.log(JSON.stringify(samlData.attributes));
-        }
+            for (var j = values.length - 1; j >= 0; j--) {
+              attr[attributes[i]._Name].push(values[j].__text);
+            };
+          }
+        };
+        samlData.attributes = attr;
+        console.log(JSON.stringify(samlData.attributes));
+      }
     }
 
     console.log(samlData);
