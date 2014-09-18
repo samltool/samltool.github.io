@@ -154,34 +154,6 @@
     return samlData;
   }
 
-  // if (samlObj.Assertion.AttributeStatement) {
-  //     if (samlObj.Assertion.AttributeStatement.Attribute) {
-  //       var attributes = samlObj.Assertion.AttributeStatement.Attribute;
-  //       var attrs = [];
-  //       var attr;
-  //       for (var i = attributes.length - 1; i >= 0; i--) {
-  //         var attrName = attributes[i]._Name;
-  //         var values = attributes[i].AttributeValue;
-  //         if (!isArray(values)) {
-  //           attr = {};
-  //           attr[attrName] = values.__text;
-  //         } else {
-  //           attr = [];
-  //           var values2 = [];
-  //           for (var j = values.length - 1; j >= 0; j--) {
-  //             values2.push(values[j].__text);
-  //           };
-
-  //           attr[attrName] = values2;
-  //         }
-
-  //         attrs.push(attr);
-  //       };
-  //       samlData.attributes = attrs;
-  //       console.log(JSON.stringify(samlData.attributes));
-  //     }
-  // }
-
   $('.prettify').on('change', function() {
     if ($('.prettify:checked').length) {
       samlDecoded = vkbeautify.xml(samlDecoded);
