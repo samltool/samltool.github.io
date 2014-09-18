@@ -112,9 +112,17 @@
                   <div>Issuer: {{issuer}}</div>
                   <div>Thumbprint: {{thumbprint}}</div>
                   <div>Attributes:
-                      <div>name: {{version}}</div>
-                      <div>name: {{__Version}}</div>
-                      <div>name: {{version}}</div>
+                    <ul class="element">
+                    {{#each attributes}}
+                      <li>
+                        <ul class="subelement">{{@key}}:
+                          {{#each this}}
+                            <li class="subvalue">{{this}}</li>
+                          {{/each}}
+                        </ul>
+                      </li>
+                    {{/each}}
+                    </ul>
                   </div>
                   <div>Expiration: {{expires}}</div>
                   <div>Audiences: {{audiences}}</div>
