@@ -10,6 +10,9 @@
     "jsonlint": "1.6.0",
     "zepto": "1.1.3",
     "handlebars": "~2.0.0",
-    "jsSHA": "~1.5.0"
+    "jsSHA": "~1.5.0",
+    "moment": "~2.8.3",
+    "twix": "~0.5.1",
+    "jquery-timeago": "~1.4.1"
   }
 }

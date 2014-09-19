@@ -14,7 +14,7 @@
 
     <!-- build:css dist/css/app.css -->
     <link rel="stylesheet" href="vendor/codemirror/lib/codemirror.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="vendor/codemirror/addon/lint/lint.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="vendor/codemirror/addon/hint/show-hint.css" type="text/css" media="all" />
     <link rel="stylesheet" href="vendor/auth0-styleguide/css/index.css" type="text/css" media="all" />
     <link rel="stylesheet" href="css/app.css" type="text/css" media="all" />
     <!-- endbuild -->
@@ -94,7 +94,7 @@
             <h4>SAML Encoded <small class="pull-right">paste a token here</small></h4>
           </div>
           <div class="col-md-6 xml">
-            <h4>SAML Decoded <div class="pull-right"><label><input type="checkbox" class="prettify" checked="checked">Prettify</label><button class="expand">Expand</button><button class="collapse" style="display: none;">Collapse</button></div></h4>
+            <h4>SAML Decoded <div class="pull-right"><label><input type="checkbox" class="prettify">Prettify (not editable)</label><button class="expand">Expand</button><button class="collapse" style="display: none;">Collapse</button></div></h4>
           </div>
         </div>
         <div class="row">
@@ -113,30 +113,25 @@
 
 
             <script id="saml-info-template" type="text/x-handlebars-template">
-                  <div>Version: {{version}}</div>
-                  <div>Issuer: {{issuer}}</div>
-                  <div>Thumbprint: {{thumbprint}}</div>
-                  <div>Attributes:
-                    <ul class="element">
-                    {{#each attributes}}
-                      <li>
-                        <ul class="subelement">{{@key}}:
-                          {{#each this}}
-                            <li class="subvalue">{{this}}</li>
-                          {{/each}}
-                        </ul>
-                      </li>
+              <div class="key">Version: </div><div class="value">{{version}}</div>
+              <div class="key">Issuer: </div><div class="value">{{issuer}}</div>
+              <div class="key">Thumbprint: </div><div class="value">{{thumbprint}}</div>
+              <div class="key">Attributes: </div>
+              <ul class="value element">
+              {{#each attributes}}
+                <li>
+                  <ul class="subelement">{{@key}}:
+                    {{#each this}}
+                      <li class="subvalue">{{this}}</li>
                     {{/each}}
-                    </ul>
-                  </div>
-                  <div>Expiration: {{expires}}</div>
-                  <div>Audiences: {{audiences}}</div>
-                  <div>Destination: {{otherData._Destination}}</div>
-                  <div>ID: {{otherData._ID}}</div>
-                  <div>Issue instant: {{otherData._IssueInstant}}</div>
-                  <div>Xmlns: {{otherData._xmlns}}</div>
+                  </ul>
+                </li>
+              {{/each}}
+              </ul>
+              <div class="key">Expiration: </div><div class="value {{expired}}">{{expires}}</div>
+              <div class="key">Audiences: </div><div class="value">{{audiences}}</div>
             </script>
-          </div>
+          </div>al
         </div>
       </div>
     </div>
@@ -171,9 +166,11 @@
     <!-- build:js dist/js/app.js -->
     <script src="vendor/codemirror/lib/codemirror.js"></script>
     <script src="vendor/codemirror/mode/xml/xml.js"></script>
+    <script src="vendor/codemirror/addon/hint/xml-hint.js"></script>
     <script src="vendor/jsrsasign/index.js"></script>
     <script src="vendor/jws.js/index.js"></script>
     <script src="vendor/handlebars/handlebars.js"></script>
+    <script src="vendor/jquery-timeago/jquery.timeago.js"></script>
     <script src="vendor/jsSHA/src/sha1.js"></script>
     <script src="js/vkbeautify.js"></script>
     <script src="js/jwt_mode.js"></script>
