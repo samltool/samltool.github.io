@@ -218,10 +218,12 @@ function formatXml(xml) {
   });
 
   xmlEditor.on('change', function(cm) {
+    if ($('.prettify').is(':checked')) {
+      return;
+    }
+
     var unencoded = window.encode(xmlEditor.getValue());
     tokenEditor.val(unencoded);
-    // var data = parseSaml(unencoded);
-    // $(".saml-info").html(template(data));
   });
 
   loadFromStorage(function (jwt) {
