@@ -73,14 +73,6 @@ function formatXml(xml) {
     extraKeys: { 'Tab': tabHack},
   });
 
-  function autoFormat() {
-      // var totalLines = 100000;
-      // var totalChars = 100000;
-      // xmlEditor.autoFormatRange({line:0, ch:0}, {line:totalLines, ch:totalChars});
-  }
-
-  // window.autoFormat = autoFormat;
-
   function saveToStorage(jwt) {
     // Save last valid jwt value for refresh
     localStorage.jwtValue = jwt;
@@ -102,7 +94,7 @@ function formatXml(xml) {
     }
 
     var samlObj = x2js.xml_str2json(samlDecoded);
-
+    console.log(samlObj);
     if (!samlObj) { return; }
 
     if (!samlObj.Response) { return; }
@@ -110,7 +102,7 @@ function formatXml(xml) {
     if (!samlObj.Response.Assertion) { return; }
 
     samlObj = samlObj.Response;
-    console.log(samlObj);
+
     var samlData = {};
 
     var version;
@@ -131,7 +123,7 @@ function formatXml(xml) {
       }
     } else if (samlObj.Assertion._Issuer) {
       if (samlObj.Assertion._Issuer) {
-        version = samlObj.Assertion._Issuer;
+        samlData.issuer = samlObj.Assertion._Issuer;
       }
     }
 
@@ -162,7 +154,7 @@ function formatXml(xml) {
         }
       } else if (samlObj.Assertion.Conditions.AudienceRestrictionCondition) {
         if (samlObj.Assertion.Conditions.AudienceRestrictionCondition.Audience) {
-          var audience = samlObj.Assertion.Conditions.AudienceRestrictionCondition.Audience.__text;
+          var audience = samlObj.Assertion.Conditions.AudienceRestrictionCondition.Audience;
 
           if (audience) {
             samlData.audience = audience;
@@ -204,7 +196,6 @@ function formatXml(xml) {
         }
 
         samlData.attributes = attr;
-        console.log(JSON.stringify(samlData.attributes));
       }
     }
 
@@ -225,7 +216,13 @@ function formatXml(xml) {
         };
       }
     } else {
-      val = values;
+      if (!isArray(values)) {
+        val = [values];
+      } else {
+        val = values;
+      }
+
+      console.log(val);
     }
     return val;
   }
