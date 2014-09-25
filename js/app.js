@@ -129,9 +129,9 @@ function formatXml(xml) {
           samlData.issuer = samlObj.Issuer.__text;
         }
       }
-    } else if (samlObj.Assertion.Conditions) {
-      if (samlObj.Assertion.Conditions._Issuer) {
-        version = samlObj.Assertion.Conditions._Issuer;
+    } else if (samlObj.Assertion._Issuer) {
+      if (samlObj.Assertion._Issuer) {
+        version = samlObj.Assertion._Issuer;
       }
     }
 
