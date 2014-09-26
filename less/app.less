@@ -221,6 +221,11 @@ pre, code { padding: 0; margin: 0; font-family:  Menlo !important; }
     }
   }  
 
+  textarea, .input {
+    border: 1px solid #44C7F4;
+    border-radius: 3px;
+  }
+
   textarea {
     width: 100%;
     padding: 10px;
@@ -228,10 +233,8 @@ pre, code { padding: 0; margin: 0; font-family:  Menlo !important; }
   }
 
   .input {
-    border: 1px solid #44C7F4;
     margin-bottom: 2px;
     border-radius: 3px;
-    background: @jwtExplainedBackgroundColor;
 
     pre span  {
       color: @jwtDotColor;
@@ -251,27 +254,6 @@ pre, code { padding: 0; margin: 0; font-family:  Menlo !important; }
       width: 100%;
       height: 400px;
       background: none;
-    }
-  }
-
-  .validation-status {
-    background: @jwtExplainedBackgroundColor;
-    padding: 15px;
-    margin-top: 20px;
-    clear: both;
-    text-align: center;
-    width: 100%;
-    font-size: 20px;
-    color: white;
-    text-transform: uppercase;
-    .box-sizing(border-box);
-
-    &.valid-token {
-      background: @validColor;
-    }
-
-    &.invalid-token {
-      background: @invalidColor;
     }
   }
 }
