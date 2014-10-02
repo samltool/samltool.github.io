@@ -97,11 +97,11 @@ function formatXml(xml) {
     console.log(samlObj);
     if (!samlObj) { return; }
 
-    if (!samlObj.Response) { return; }
-
-    if (!samlObj.Response.Assertion) { return; }
-
-    samlObj = samlObj.Response;
+    if (samlObj.Response) {
+      samlObj = samlObj.Response;
+    } else if (!samlObj.Assertion) {
+       return;
+    }
 
     var samlData = {};
 
