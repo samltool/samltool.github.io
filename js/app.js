@@ -243,7 +243,7 @@ function formatXml(xml) {
     return name;
   }
 
-  $('.prettify').on('change', function() {
+  $('#prettify').on('change', function() {
     if (!$(this).is(':checked')) {
       xmlEditor.setOption("readOnly", false);
 
@@ -269,7 +269,7 @@ function formatXml(xml) {
   });
 
   xmlEditor.on('change', function(cm) {
-    if ($('.prettify').is(':checked')) {
+    if ($('#prettify').is(':checked')) {
       return;
     }
     samlDecoded = xmlEditor.getValue();
