@@ -14,7 +14,8 @@
 
     <!-- build:css dist/css/app.css -->
     <link rel="stylesheet" href="vendor/codemirror/lib/codemirror.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="vendor/codemirror/addon/hint/show-hint.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="vendor/codemirror/addon/hint/show-hint.css" type="text/css" media="all" /> -->
+    <link rel="stylesheet" href="vendor/codemirror/addon/fold/foldgutter.css" type="text/css" media="all" />
     <link rel="stylesheet" href="vendor/auth0-styleguide/css/index.css" type="text/css" media="all" />
     <link rel="stylesheet" href="css/app.css" type="text/css" media="all" />
     <!-- endbuild -->
@@ -57,7 +58,7 @@
       </nav>
 
     <!-- Begin page content -->
-    <div class="banner-jwt">
+    <div class="banner-saml">
       <canvas></canvas>
       <div class="container">
         <p><strong>Security Assertion Markup Language (SAML)</strong> is an XML-based open standard data format for exchanging authentication and authorization data between parties, in particular, between an identity provider and a service provider. <a href="http://en.wikipedia.org/wiki/Security_Assertion_Markup_Language" target="_blank">Wikipedia</a></p>
@@ -71,7 +72,7 @@
         <h1 id="debugger">Debugger</h1>
       </div>
       
-      <div class="jwt-playground">
+      <div class="saml-playground">
         <div class="row">
           <div class="col-md-6 token">
             <h4>SAML Encoded <small class="pull-right">paste a token here</small></h4>
@@ -148,16 +149,20 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <!-- build:js dist/js/app.js -->
     <script src="vendor/codemirror/lib/codemirror.js"></script>
-    <script src="vendor/codemirror/mode/xml/xml.js"></script>
+
+    <script src="vendor/codemirror/addon/fold/foldcode.js"></script>
+    <script src="vendor/codemirror/addon/fold/xml-fold.js"></script>
+    <script src="vendor/codemirror/addon/fold/foldglutter.js"></script>
     <script src="vendor/codemirror/addon/hint/xml-hint.js"></script>
+    <script src="vendor/codemirror/addon/edit/matchtags.js"></script>
+    <script src="vendor/codemirror/mode/xml/xml.js"></script>>
     <script src="vendor/jsrsasign/index.js"></script>
     <script src="vendor/jws.js/index.js"></script>
     <script src="vendor/handlebars/handlebars.js"></script>
     <script src="vendor/jquery-timeago/jquery.timeago.js"></script>
     <script src="vendor/jsSHA/src/sha1.js"></script>
     <script src="js/vkbeautify.js"></script>
-    <script src="js/jwt_mode.js"></script>
-    <script src="js/jwt.js"></script>
+    <script src="js/saml.js"></script>
     <script src="js/xml2json.js"></script>
     <script src="js/app.js"></script>
     <!-- endbuild -->

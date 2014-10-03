@@ -1,8 +1,8 @@
-@jwtHeaderColor:              #859900;
-@jwtPayloadColor:             #268bd2;
-@jwtDotColor:                 #000;
-@jwtSignatureColor:           #dc322f;
-@jwtExplainedBackgroundColor: #fff;
+@samlHeaderColor:              #859900;
+@samlPayloadColor:             #268bd2;
+@samlDotColor:                 #000;
+@samlSignatureColor:           #dc322f;
+@samlExplainedBackgroundColor: #fff;
 
 @backgroundColor:             #fff;
 
@@ -27,7 +27,7 @@
   margin-right: 30px;
 }
 
-.banner-jwt{
+.banner-saml{
   position: relative;
   margin-top: 50px;
   padding: 20px 20px;
@@ -207,7 +207,7 @@ pre, code { padding: 0; margin: 0; font-family:  Menlo !important; }
   padding-bottom: 40px
 }
 
-.jwt-playground {
+.saml-playground {
   width: 100%;
 
   h4{
@@ -237,18 +237,18 @@ pre, code { padding: 0; margin: 0; font-family:  Menlo !important; }
     border-radius: 3px;
 
     pre span  {
-      color: @jwtDotColor;
+      color: @samlDotColor;
       font-family: proxima-nova, 'Helvetica Neue', sans-serif;
-      font-size: 15px;
+      font-size: 14px;
     }
 
     * {
       line-height: 16px;
     }
 
-    .cm-tag    { color: @jwtHeaderColor;     }
-    .cm-attribute   { color: @jwtPayloadColor;    }
-    .cm-string { color: @jwtSignatureColor;  }
+    .cm-tag    { color: @samlHeaderColor;     }
+    .cm-attribute   { color: @samlPayloadColor;    }
+    .cm-string { color: @samlSignatureColor;  }
 
     .CodeMirror {
       width: 100%;
