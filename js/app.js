@@ -107,7 +107,7 @@ function formatXml(xml) {
     }
 
     var samlObj = x2js.xml_str2json(samlDecoded);
-    console.log(samlObj);
+    // console.log(samlObj);
     if (!samlObj) { return; }
 
     if (samlObj.Response) {
@@ -212,7 +212,7 @@ function formatXml(xml) {
       }
     }
 
-    console.log(samlData);
+    // console.log(samlData);
     return samlData;
   }
 
@@ -235,7 +235,7 @@ function formatXml(xml) {
         val = values;
       }
 
-      console.log(val);
+      // console.log(val);
     }
     return val;
   }
