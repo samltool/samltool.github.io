@@ -76,6 +76,9 @@
 
 }
 
+.token-input, .xml-input {
+  height: 550px;
+}
 
 .CodeMirror {
   zoom: @codeMirrorZoom;
@@ -229,7 +232,6 @@ pre, code { padding: 0; margin: 0; font-family:  Menlo !important; }
   textarea {
     width: 100%;
     padding: 10px;
-    max-height: 420px;
   }
 
   .input {
@@ -252,7 +254,7 @@ pre, code { padding: 0; margin: 0; font-family:  Menlo !important; }
 
     .CodeMirror {
       width: 100%;
-      height: 400px;
+      height: 100%;
       background: none;
     }
   }
@@ -260,6 +262,12 @@ pre, code { padding: 0; margin: 0; font-family:  Menlo !important; }
 
 #prettify {
   margin-right: 5px;
+}
+
+.info {
+  border: 1px solid #44C7F4;
+  background-color: #F4F4F4;
+  margin: 15px 0;
 }
 
 .saml-info ul {
