@@ -114,7 +114,7 @@
     }
 
     var samlObj = x2js.xml_str2json(samlDecoded);
-    console.log(samlObj);
+    // console.log(samlObj);
     if (!samlObj) {
       return;
     }
@@ -146,6 +146,14 @@
     } else if (samlObj.Assertion._Issuer) {
       if (samlObj.Assertion._Issuer) {
         samlData.issuer = samlObj.Assertion._Issuer;
+      }
+    }
+
+    if (samlObj.Assertion.Subject) {
+      if (samlObj.Assertion.Subject.NameID) {
+        if (samlObj.Assertion.Subject.NameID.__text) {
+          samlData.nameId = samlObj.Assertion.Subject.NameID.__text;
+        }
       }
     }
 
@@ -221,7 +229,7 @@
       }
     }
 
-    console.log(samlData);
+    // console.log(samlData);
     return samlData;
   }
 
@@ -244,7 +252,7 @@
         val = values;
       }
 
-      console.log(val);
+      // console.log(val);
     }
     return val;
   }
