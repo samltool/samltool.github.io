@@ -316,6 +316,7 @@
     samlDecoded = window.decode(tokenEditor.val()).result;
 
     xmlEditor.setValue(vkbeautify.xml(samlDecoded));
+    xmlEditor.setOption("readOnly", true);
 
     var data = parseSaml(samlDecoded);
     $(".saml-info").html(template(data));
