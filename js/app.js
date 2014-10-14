@@ -272,8 +272,7 @@
       xmlEditor.setValue(samlDecoded);
       xmlEditor.focus();
     } else {
-      xmlEditor.setValue(samlDecoded);
-      // xmlEditor.setValue(vkbeautify.xml(samlDecoded));
+      xmlEditor.setValue(vkbeautify.xml(samlDecoded));
       xmlEditor.setOption("readOnly", true);
     }
   });
