@@ -1,4 +1,6 @@
-##samltool.io
+## samltool.io
+
+> **⚠️ Deprecation warning**: This is the old codebase for samltool.io, which has been replaced by [v2](https://github.com/auth0/samltool-v2)
 
 ### How to build
 
